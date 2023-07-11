@@ -1,0 +1,25 @@
+input -- technique to input keyboard directly to python mem
+
+echo - print in screen something
+
+echo $? -- imprime o valor de saída se um programa funciona (0) ou não (1, 2, 3, etc) - modo inteligente e rapido de verificar se um código está rodando certo ou não
+
+export -- create a new environment variable
+
+
+wc -- conta as palavras e linhas
+
+depois do exemplo do wc, ele testa com echo$? para saber qual tipo de erro o script está emitindo
+
+com essas poucas lições, se aprendeu a enviar parametros para um programa, de forma interativa, e produzir um resultado, se ele está funcionando ou não com sucesso
+
+###########################
+É possível capturar a saída do comando do sistema pelo python. O que é isso? Capturar a saída do comando do sistema em Python significa redirecionar e armazenar o resultado gerado por um comando executado no terminal ou shell. Em outras palavras, quando você executa um comando do sistema por meio do Python, é possível obter o resultado gerado por esse comando e armazená-lo em uma variável para uso posterior ou para processamento dentro do próprio código Python.
+
+É mandar o python executar um comando no terminal do linux e capturar essa saída e armazenar em algum lugar. Que louco! O python pode controlar o computador! Assim como o reverso, o computador, pelo shell, pode controlar o python; 
+
+Na aula anterior, o python pode rodar comandos do sistema (shell, bash - linux), por meio de um comando chamado subprocess
+
+para executar um comando DO python PARA o bash, se usa o subprocess, em que, o script só irá completar o run quando seus subprocessos no bash forem concluídos.
+
+

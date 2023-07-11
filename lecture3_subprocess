@@ -1,0 +1,23 @@
+import subprocess
+
+subprocess.run(['date'])
+#ele irá rodar no bash do linux o comando date e retornará um subprocess.returncode = 0 caso seja bem sucedido, que nem o caso do echo $? -- que ele retorna o valor 0 se for sucedido ou 1,2,3 em caso de erro
+
+#contudo, para capturar o output, deve haver outra estratégia em vez de jogar dentro de uma variável no python
+
+#qual?
+
+result = subprocess.run(['host', '8.8.8.8'], capture_output = True)
+
+print(result.reutrncode) #expected '0'
+prin(result.stdout) #o que sai para a tela
+
+b'' -- array of bytes
+how to transform bytes to string? enconding the str?
+
+para decodificar os bytes em str:
+
+result.stdout.decode().split()
+stderr - para o STDERROR
+
+all this is to yeld a log file

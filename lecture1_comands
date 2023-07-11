@@ -1,0 +1,92 @@
+comands:
+
+python3 - interactive interpreter
+.py -- save files with this extension
+cat -- shows the contents of a file on linux
+
+example:
+cat /home/cleyton/ProjetosGit/msc_thesis_naea_ufpa/download_pdfiles.py  
+
+execute a script calling the pipeline interpreter:
+
+python3 dir/download_pdfiles.py
+
+so, write "python3" each time you run cant get really old... so, write a first line in your code called "shebang":
+
+to open a file, and not just read it, use "nano"
+
+nano -- one of the editors available on a linux sys
+
+example:
+nano /home/cleyton/ProjetosGit/msc_thesis_naea_ufpa/download_pdfiles.py  
+
+shebang: #!/usr/bin/env python3
+
+chmod -- do the file executable (change us file permissions -- permissions are: read, write, and execute)
+
+example:
+
+chmod +x /home/cleyton/ProjetosGit/msc_thesis_naea_ufpa/download_pdfiles.py 
+
+it's make the file can be execute usin dot slash
+
+./ -- means thath file is located in any of the dir listed in the Path variable / represente the current directory
+
+Path variable tells operating sys where to find programs to execute
+
+
+############################################################
+
+modules to check the healthy system: shutil, disk_usage;
+
+example:
+
+import shutil
+du = suhtil.disk_usage("/")
+du.free/du.total*100 == total free disk size %
+
+
+modules to check cpu usage: psutil -- cpu_percent
+
+######################################
+
+absolute path == 
+in windows -- C:\User\nome
+in linux -- \home\nome
+
+#############
+
+os.rename(renamed a file)
+os.getcwd(current dir you use)
+os.getmtime(get modified time file)
+os.getsize(get size of file)
+os.mkdir(create a dir)
+os.chdir(setwd in R -- change dir)
+os.rmdir (remove dir, but just if it's empty - no contents)
+os.path.getabspath(get absolut path)
+
+how to check contents in dir?
+
+os.listdir -- returns list of all the files
+
+os.path.join() -- create a full path and check if one of list itens identified is a dir too
+
+if os.path.isdir() -- check
+
+
+
+
+
+
+
+example:
+./download_pdfiles.py
+
+chmod 600 ~/Downloads/qwiklabs-L46267198.pem
+
+
+ssh -i ~/Downloads/qwiklabs-L46267198.pem student-03-ad9cfdeba24e@34.27.138.227
+
+
+
+

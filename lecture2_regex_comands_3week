@@ -1,0 +1,11 @@
+lecture2_regex_comands_3week
+
+grep thon /usr/share/dict/word - function to search pattern
+grep -i thon /usr/share/dict/word - ignore sensitivy case
+
+https://regexcrossword.com/
+
+link to challenges
+
+
+

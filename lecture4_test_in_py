@@ -1,0 +1,69 @@
+#testes unitários são criados para avaliar uma parte do código
+
+#geralmente são scripts escritos _test para cada .py (programa)
+
+# o python tem uma biblioteca de testes unitários que podem ser puxadas como herança
+
+#Edge Cases -- caso limite
+
+inputs to our code that produce unexpected result, and are found at the extreme ends of the ranges of input we imagine our programs will typically work with
+
+
+Em Python (e na programação em geral), os "Edge Cases" (casos extremos) referem-se a situações de teste que envolvem os limites ou extremidades dos dados de entrada que um programa pode receber. São exemplos que testam o comportamento do código quando os valores de entrada estão nos pontos críticos ou nos limites de aceitação.
+
+Esses casos são importantes porque podem revelar problemas ou erros que não são evidentes em testes comuns. Ao testar casos extremos, é possível garantir que o programa se comporte corretamente em todas as situações, incluindo as mais extremas.
+
+Por exemplo, se você estiver escrevendo uma função que realiza uma divisão, os casos extremos poderiam ser:
+
+    Dividir um número por zero: Testar como o programa lida com a divisão por zero, que é um caso excepcional.
+
+    Dividir um número muito grande ou muito pequeno: Testar como o programa se comporta quando a entrada é um número nos limites do intervalo de representação numérica.
+
+    Dividir números negativos: Testar como o programa reage a valores negativos.
+
+Ao testar esses casos extremos, você pode identificar erros e corrigir problemas que podem não ser evidentes em situações normais de uso do programa. É uma prática recomendada em testes de software para garantir a robustez e a confiabilidade do código.
+
+#################################################
+
+O que é white-box test?
+
+White-box testing, também conhecido como teste de caixa branca, é uma técnica de teste de software em que o testador tem conhecimento detalhado da estrutura interna do código a ser testado. Em outras palavras, o testador possui acesso ao código-fonte e usa esse conhecimento para projetar os casos de teste.
+
+
+As principais técnicas de white-box testing incluem:
+
+    Teste de cobertura de código: Verificar quais partes do código foram executadas durante os testes e identificar áreas não testadas.
+
+    Teste de caminhos: Certificar-se de que todos os caminhos possíveis do código tenham sido testados, incluindo caminhos condicionais e loops.
+
+    Teste de condições: Garantir que todas as condições no código tenham sido testadas, incluindo valores verdadeiros e falsos.
+
+    Teste de loops: Verificar se os loops são executados corretamente e se não resultam em loops infinitos.
+    
+    
+#################################################
+
+o que é o black-box test?
+
+Black-box testing, também conhecido como teste de caixa preta, é uma técnica de teste de software em que o testador não tem conhecimento detalhado da estrutura interna do código a ser testado. Em vez disso, o teste é projetado com base nas especificações e comportamento esperado do software, sem olhar para o código-fonte.
+
+As principais características do black-box testing incluem:
+
+    Teste de funcionalidades: Verificar se todas as funcionalidades especificadas do software estão funcionando conforme o esperado.
+
+    Teste de entradas e saídas: Verificar se o software processa corretamente as entradas fornecidas e produz as saídas esperadas.
+
+    Teste de limites: Testar o software com valores nos limites dos intervalos permitidos, incluindo valores mínimos, máximos e valores extremos.
+
+    Teste de casos de uso típicos e excepcionais: Verificar se o software funciona corretamente em cenários comuns e em situações de erro ou exceção.
+    
+  #####################################################
+  
+  Integrate Test
+  
+  Um integrated test (teste integrado) em Python é um tipo de teste de software que verifica a interação entre diferentes componentes, módulos ou unidades do código de um programa. Ele é projetado para garantir que as partes individuais do software funcionem corretamente quando combinadas em conjunto, ou seja, quando integradas.
+
+Ao contrário dos testes de unidade que se concentram em testar cada parte do código isoladamente, o teste integrado examina como essas partes se comportam quando trabalham em conjunto para realizar uma funcionalidade mais complexa do sistema.
+
+
+

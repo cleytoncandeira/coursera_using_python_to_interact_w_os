@@ -1,0 +1,154 @@
+basic comand linux
+
+echo -- print messages to the screen
+cat -- show contents to file
+ls -- list contents
+chmod -- change permissions of a file
+mkdir -- create new directory
+cd --- altera o caminho
+pwd -- verifica o caminho
+cp -- copy files
+.. - acessa o diretório acima (anterior)
+. - acessa o diretório presente
+touch -- create empty file
+ls -l -- content of the directory (first column -- permissoes do arquivo; segunda coluna - 'i nodulos' de ponto do arquivo; terceira coluna indica o proprietário e o grupo dos quais os arquivos pertencem; na quarta coluna vem o tamanho do arquivo; na quinta, a data de modificação e na sexta o nome do arquivo) 
+
+ls - la -- mostra os arquivos ocultos (. -- diretório corrente; .. -- diretório pai)f
+
+mv - para mover ou renomear um arquivo
+
+mv example.txt new_name_example.txt
+
+cp -- também copia o arquivo e com a copia ele a renomeia no parâmetro seguinte
+
+rm -- deleta os arquivos
+rm * -- delete all
+
+rmdir -- apenas funciona se todos os arquivos estiverem apagados (apaga um diretório)
+
+#############################
+
+./stdout_example.py > new_file.txt #ele redireciona o output de um arquivo stdout_example para o new_file.txt, como se enviasse somente o print do programa #isso é útil em logs -- se o arquivo não existir, ele cria; se já existir, ele sobreescreve; -- nome disso é redirecionamento
+
+com >> é possível dar um append e ir acumulando outputs dentro de um arquivo
+
+o sinal < lê o conteúdo de um arquivo - redirecionamento de entrada
+
+"<" (redirecionamento de entrada): O operador "<" é usado para redirecionar a entrada de um comando a partir de um arquivo. Por exemplo, se você tem um arquivo chamado "input.txt" e deseja usá-lo como entrada para um comando, você pode fazer o seguinte:
+
+
+comando < input.txt
+
+Nesse caso, o conteúdo do arquivo "input.txt" será fornecido como entrada para o comando, em vez do que seria inserido via teclado. Isso é útil quando você tem um grande conjunto de dados ou deseja automatizar a entrada de dados em um script.
+
+usando 2> ele consegue fazer duas operações, de ler < e enviar 2> para um arquivo
+
+"2>" (redirecionamento de saída de erro): O operador "2>" é usado para redirecionar a saída de erro (stderr) de um comando para um arquivo. O stderr é a saída onde são exibidas as mensagens de erro e informações de diagnóstico. Por exemplo:
+
+comando 2> error.log
+
+Nesse caso, as mensagens de erro geradas pelo comando serão redirecionadas para o arquivo "error.log" em vez de serem exibidas na tela. Isso é útil para salvar informações de erro para posterior análise ou registro.
+
+
+
+
+######################################
+
+Pipes and Pipelines
+
+Using pipes
+
+On top of the redirection to and
+from files that we saw in the last video,
+there's another powerful way to perform
+IO stream redirection called Piping.
+Using pipes, you can connect multiple scripts, commands,
+or other programs together
+into a data processing pipeline.
+Pipes connect the output of
+one program to the input of another.
+This means we can pass data between programs,
+taking the output of one and
+making it the input of the next
+
+
+| -- pipe character
+
+o comando: ls -l | less
+-l lista os detalhes sobre arquivos e diretórios
+
+|, ou pipe, redireciona a saída desse comando para a entrada de outro, redireciona a saída de ls -l para a entrada de less. 
+
+less é umm visualizador de texto no terminal que permite percorrer e visualizar a saída do comando página por página; ele facilita a visualização de resultados longos ou extensos, permitindo que você role a página para cima e para baixo conforme necessário.
+
+| conecta dois ou mais programas
+
+
+
+cat spider.txt (mostra o conteúdo do arquivo) | tr ' ' '\n' (transforma cada caractere ' ' (whitespace) em '\n' (pulo de linha) | sort (ordena os resultados alfabeticamente) | uniq -c (identifica linhas consecutivas repetidas e conta a ocorrência mostrando o valor ao lado) | sort -nr (ordena numericamente em ordem reversa) | head (printa na tela as dez primeiras linhas)
+
+
+como aplicar um script python num arquivo usando pipeline?
+
+cat haiku.txt | ./capitalize.py #ele aplica a função ou conjunto de funções de .py para txt
+
+Para um caso isolado, o redirecionamento é suficiente, contudo, para várias situações de redirecionamento, o pipe é fundamental
+
+
+
+############################
+
+signaling processes (processos de sinalização)
+
+No contexto do Bash e do sistema operacional Linux, os "signaling processes" (processos de sinalização) referem-se à capacidade do sistema operacional de enviar sinais para processos em execução. Um sinal é uma notificação assíncrona enviada a um processo para indicar um evento ou solicitar uma ação específica.
+
+Aqui estão alguns aspectos importantes sobre a sinalização de processos em Bash/Linux:
+
+    Tipos de sinais: Existem vários tipos de sinais disponíveis, cada um com um número exclusivo. Alguns dos sinais mais comuns são o SIGKILL (sinal 9), usado para forçar a terminação imediata de um processo, e o SIGTERM (sinal 15), usado para solicitar que um processo termine.
+
+    Envio de sinais: O comando kill é usado para enviar sinais para processos em execução. O formato geral é kill -s sinal PID, onde "sinal" é o número ou nome do sinal e "PID" é o ID do processo que receberá o sinal. Por exemplo, kill -9 1234 envia o sinal SIGKILL para o processo com ID 1234.
+
+    Tratamento de sinais: Os processos podem ter diferentes ações configuradas para lidar com os sinais recebidos. Por padrão, a maioria dos processos ignora sinais como SIGINT (geralmente gerado ao pressionar Ctrl+C) ou SIGTERM. No entanto, os processos podem ser programados para lidar com esses sinais e executar ações específicas, como finalizar tarefas pendentes ou limpar recursos antes de encerrar.
+
+    Sinais comuns: Além do SIGKILL e SIGTERM mencionados acima, existem outros sinais comuns, como SIGSTOP (pausa a execução do processo), SIGCONT (retoma a execução após pausa) e SIGUSR1/SIGUSR2 (sinais personalizáveis que podem ser usados para comunicação entre processos).
+
+    Manipulação de sinais em scripts: Em scripts Bash, é possível definir funções ou usar o comando trap para especificar o comportamento do script em resposta a sinais específicos. Isso permite que o script execute ações personalizadas quando um sinal é recebido.
+
+Os sinais são uma parte importante da comunicação e do controle de processos no ambiente Linux. Eles permitem que o sistema operacional e os processos interajam de maneira assíncrona, permitindo notificações, solicitações de encerramento ou outras ações específicas.
+
+signal é um comando que faz uma ação no terminal do Bash ou de qualquer linguagem
+
+
+when press CTRL + C, the process received a sign that we wanted it to stop. When that signal's received, the process does whatever it needs to finish cleanly. O sinal que controla o sentido visual se chama SIGINT, que é apenas um dos vários sinais que podemos mandar
+
+E o CTRL + Z?
+
+O sinal enviado é um SIGSTOP - ele não finaliza o processo de forma limpa, ele dá "stop", e pode ser reintroduzido seu processo digitando 'fg'
+
+kill -- send a signal called SIGTERM, that tells the program to terminate 
+
+para mandar kill um processo, deve-se saber o ID do processo (PID). Para saber o PID se usa o 'ps' comando, que lista os processos atuais que estão rodando
+'ps ax' -- ele passa todos os processos do computador
+
+ps ax | grep ping #o grep é um padrão que se usa para buscar na lista de vários processos o "ping" processo e revelar seu identificador
+
+kill 4619 -- example
+
+the processs is terminate 
+
+
+Qual a diferença dessas interrupções? Sei que o stop para e dá pra continuar, mas e o kill? 
+
+SIGTERM (sinal 15) é um sinal de terminação normal enviado para um processo. Quando um processo recebe o sinal SIGTERM, ele tem a oportunidade de finalizar suas atividades de forma adequada, fechando arquivos abertos, liberando recursos e encerrando suas operações de maneira ordenada.
+
+SIGKILL (sinal 9) é um sinal de terminação forçada que não pode ser ignorado pelo processo. Ao receber o sinal SIGKILL, o processo é encerrado imediatamente, sem a chance de realizar qualquer ação de encerramento adequada. Isso pode resultar em perda de dados ou em um estado inconsistente do sistema.
+
+Em resumo, o SIGTERM é uma solicitação educada para um processo se encerrar, enquanto o SIGKILL é uma ação forçada e brusca para terminar um processo. É recomendado usar o SIGTERM primeiro e, se necessário, recorrer ao SIGKILL apenas em casos extremos em que o processo não esteja respondendo ao SIGTERM.
+
+
+
+
+
+
+
+
